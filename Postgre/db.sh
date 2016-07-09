@@ -1,7 +1,7 @@
 #!/bin/sh
 DATABASE=docker
 USERNAME=docker
-HOSTNAME=127.0.0.1
+HOSTNAME=$(grep 'docker_postgrest' /etc/hosts | awk '{print $1}')
 export PGPASSWORD=docker
 
 psql -h $HOSTNAME -U $USERNAME $DATABaSE << EOF
