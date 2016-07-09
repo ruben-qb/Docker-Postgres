@@ -16,7 +16,7 @@ RUN wget http://github.com/begriffs/postgrest/releases/download/v${POSTGREST_VER
     mv postgrest /usr/local/bin/postgrest && \
     rm postgrest-${POSTGREST_VERSION}-ubuntu.tar.xz
 
-CMD exec postgrest postgres://docker:docker@127.0.0.1:5432/docker \
+CMD exec postgrest postgres://docker:docker@172.17.0.3:5432/docker \
               --port 3000 \
               --schema ${POSTGREST_SCHEMA} \
               --anonymous ${POSTGREST_ANONYMOUS} \
