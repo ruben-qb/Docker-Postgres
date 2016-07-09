@@ -1,9 +1,10 @@
 # Docker-Postgres
----------------------Docker-Postgres-----------------------------------
+-----------------------------------------------Docker-Postgres-------------------------------------------------------------
 
 We are using 5432 port as default port for PostgreSQL 9.5.3 and 3000 as port for PostgREST container.Confirm if both 3000 port and 5432 are not used using TELNET command . If it uses any port bind our container to a different port.
 
-[ Build and Run the PostgREST 0.3.2 container ]
+
+# Build and Run the PostgREST 0.3.2 container 
 
 Go to the PostgREST directory using command 
   
@@ -16,8 +17,10 @@ Build the docker container from this directory using the Dockerfile , You can us
 Run the docker container using the command assuming you have used the nametag as i did
 
   sudo docker run --name docker_postgrest -itd -p 127.0.0.1:3000:3000 ruben_qb/pgrest
+  
+---------------------------------------------------------------------------------------------------------------------------
 
-[ Build and Run the PostgreSQL 9.5 container ] 
+# Build and Run the PostgreSQL 9.5 container  
  
 Shift the current directory to Postgre using the command
 
@@ -39,7 +42,9 @@ To confirm if all our docker containers are running you can use
 
    sudo docker ps 
 
-[ Script to add 1000 records to a table in the database ] 
+---------------------------------------------------------------------------------------------------------------------------
+
+# Script to add 1000 records to a table in the database  
 
 It is not reccomended to keep the port 5432 connected to DB open to network , here we have opened it just for the testing purpose and making it easier .
 
@@ -54,13 +59,17 @@ Select container id of first (latest) docker file with name docker_pgsql
    sh db.sh
    exit
 
-[ Script to filter sql queries based on conditions ] 
+---------------------------------------------------------------------------------------------------------------------------
+
+# Script to filter sql queries based on conditions 
 
 Change your directory to PostgREST and execute the bash script condition.sh using command
     
    sh condition.sh
+   
+---------------------------------------------------------------------------------------------------------------------------
 
-[ Benchmark tests for REST requests using AB ]
+# Benchmark tests for REST requests using AB 
 
 I have used Apache Benchmark testing for testing the performance of the REST requests. I have taken a set of benchmark based on multiple conditions and below is the output of the tests with header corresponding to each test done on it
 
